@@ -5,7 +5,6 @@ var meditationMan = document.querySelector("#mm-image");
 var messageBox = document.querySelector(".text-box");
 var clearButton = document.querySelector(".clear-button");
 
-// event listeners below:
 
 receiveButton.addEventListener('click', getMessage);
 clearButton.addEventListener('click', clearMessage);
@@ -39,17 +38,17 @@ function switchScreen(){
   messageBox.classList.remove('hidden');
   clearButton.classList.remove('hidden');
 };
-//
+
 function clearMessage(){
   if(messageBox.innerText = ''){
     document.querySelector('message.wrapper').reset();
-  }
-  meditationMan.classList.remove('hidden');
+  } meditationMan.classList.remove('hidden');
   clearButton.classList.add('hidden');
-}
+  buttonsReset()
+};
 
-// function randomElement(array){
-//  var randomIndex = getRandomIndex(array)
-//  var randomDetails = array[randomIndex]
-//  console.log(randomDetails)
-// };
+function buttonsReset(){
+  var radioButton = document.getElementsByName("choice");
+  for(var i=0; i < radioButton.length; i++)
+  radioButton[i].checked = false;
+};
